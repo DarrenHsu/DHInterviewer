@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68A97C581D1BACD600554913 /* DHRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A97C571D1BACD600554913 /* DHRoom.m */; };
+		68A97C5B1D1BACE200554913 /* DHLocalRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A97C5A1D1BACE200554913 /* DHLocalRoom.m */; };
+		68A97C5E1D1BACEE00554913 /* DHRemoteRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A97C5D1D1BACEE00554913 /* DHRemoteRoom.m */; };
 		68B653171D1B7214005166B6 /* DHSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B653161D1B7214005166B6 /* DHSocketServer.m */; };
 		68B6531A1D1B722A005166B6 /* DHSocketServerBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B653191D1B722A005166B6 /* DHSocketServerBrowser.m */; };
 		68B6531D1D1B723D005166B6 /* DHSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B6531C1D1B723D005166B6 /* DHSocketConnection.m */; };
@@ -19,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68A97C561D1BACD600554913 /* DHRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRoom.h; sourceTree = "<group>"; };
+		68A97C571D1BACD600554913 /* DHRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRoom.m; sourceTree = "<group>"; };
+		68A97C591D1BACE200554913 /* DHLocalRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLocalRoom.h; sourceTree = "<group>"; };
+		68A97C5A1D1BACE200554913 /* DHLocalRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLocalRoom.m; sourceTree = "<group>"; };
+		68A97C5C1D1BACEE00554913 /* DHRemoteRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHRemoteRoom.h; sourceTree = "<group>"; };
+		68A97C5D1D1BACEE00554913 /* DHRemoteRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHRemoteRoom.m; sourceTree = "<group>"; };
 		68B653151D1B7214005166B6 /* DHSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSocketServer.h; sourceTree = "<group>"; };
 		68B653161D1B7214005166B6 /* DHSocketServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSocketServer.m; sourceTree = "<group>"; };
 		68B653181D1B722A005166B6 /* DHSocketServerBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSocketServerBrowser.h; sourceTree = "<group>"; };
@@ -75,6 +84,12 @@
 		68B653121D1B71F9005166B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				68A97C561D1BACD600554913 /* DHRoom.h */,
+				68A97C571D1BACD600554913 /* DHRoom.m */,
+				68A97C591D1BACE200554913 /* DHLocalRoom.h */,
+				68A97C5A1D1BACE200554913 /* DHLocalRoom.m */,
+				68A97C5C1D1BACEE00554913 /* DHRemoteRoom.h */,
+				68A97C5D1D1BACEE00554913 /* DHRemoteRoom.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,7 +212,10 @@
 			files = (
 				68B6531D1D1B723D005166B6 /* DHSocketConnection.m in Sources */,
 				8C6479191D12723800DDA18D /* ViewController.swift in Sources */,
+				68A97C5E1D1BACEE00554913 /* DHRemoteRoom.m in Sources */,
+				68A97C581D1BACD600554913 /* DHRoom.m in Sources */,
 				8C6479171D12723800DDA18D /* AppDelegate.swift in Sources */,
+				68A97C5B1D1BACE200554913 /* DHLocalRoom.m in Sources */,
 				8C64791F1D12723800DDA18D /* DHInterviewer.xcdatamodeld in Sources */,
 				68B6531A1D1B722A005166B6 /* DHSocketServerBrowser.m in Sources */,
 				68B653171D1B7214005166B6 /* DHSocketServer.m in Sources */,
