@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68B653171D1B7214005166B6 /* DHSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B653161D1B7214005166B6 /* DHSocketServer.m */; };
+		68B6531A1D1B722A005166B6 /* DHSocketServerBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B653191D1B722A005166B6 /* DHSocketServerBrowser.m */; };
+		68B6531D1D1B723D005166B6 /* DHSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B6531C1D1B723D005166B6 /* DHSocketConnection.m */; };
 		8C6479171D12723800DDA18D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6479161D12723800DDA18D /* AppDelegate.swift */; };
 		8C6479191D12723800DDA18D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6479181D12723800DDA18D /* ViewController.swift */; };
 		8C64791C1D12723800DDA18D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C64791A1D12723800DDA18D /* Main.storyboard */; };
@@ -16,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68B653151D1B7214005166B6 /* DHSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSocketServer.h; sourceTree = "<group>"; };
+		68B653161D1B7214005166B6 /* DHSocketServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSocketServer.m; sourceTree = "<group>"; };
+		68B653181D1B722A005166B6 /* DHSocketServerBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSocketServerBrowser.h; sourceTree = "<group>"; };
+		68B653191D1B722A005166B6 /* DHSocketServerBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSocketServerBrowser.m; sourceTree = "<group>"; };
+		68B6531B1D1B723D005166B6 /* DHSocketConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHSocketConnection.h; sourceTree = "<group>"; };
+		68B6531C1D1B723D005166B6 /* DHSocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHSocketConnection.m; sourceTree = "<group>"; };
+		68B6531F1D1B7294005166B6 /* DHInterviewer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DHInterviewer-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C6479131D12723800DDA18D /* DHInterviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHInterviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6479161D12723800DDA18D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6479181D12723800DDA18D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +47,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68B6530F1D1B71F9005166B6 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		68B653101D1B71F9005166B6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				68B653111D1B71F9005166B6 /* DHSocket */,
+				68B6531F1D1B7294005166B6 /* DHInterviewer-Bridging-Header.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		68B653111D1B71F9005166B6 /* DHSocket */ = {
+			isa = PBXGroup;
+			children = (
+				68B653121D1B71F9005166B6 /* Model */,
+				68B653131D1B71F9005166B6 /* Utility */,
+			);
+			path = DHSocket;
+			sourceTree = "<group>";
+		};
+		68B653121D1B71F9005166B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		68B653131D1B71F9005166B6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				68B653151D1B7214005166B6 /* DHSocketServer.h */,
+				68B653161D1B7214005166B6 /* DHSocketServer.m */,
+				68B653181D1B722A005166B6 /* DHSocketServerBrowser.h */,
+				68B653191D1B722A005166B6 /* DHSocketServerBrowser.m */,
+				68B6531B1D1B723D005166B6 /* DHSocketConnection.h */,
+				68B6531C1D1B723D005166B6 /* DHSocketConnection.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		8C64790A1D12723700DDA18D = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +111,8 @@
 		8C6479151D12723800DDA18D /* DHInterviewer */ = {
 			isa = PBXGroup;
 			children = (
+				68B6530F1D1B71F9005166B6 /* Class */,
+				68B653101D1B71F9005166B6 /* Library */,
 				8C6479161D12723800DDA18D /* AppDelegate.swift */,
 				8C6479181D12723800DDA18D /* ViewController.swift */,
 				8C64791A1D12723800DDA18D /* Main.storyboard */,
@@ -138,9 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B6531D1D1B723D005166B6 /* DHSocketConnection.m in Sources */,
 				8C6479191D12723800DDA18D /* ViewController.swift in Sources */,
 				8C6479171D12723800DDA18D /* AppDelegate.swift in Sources */,
 				8C64791F1D12723800DDA18D /* DHInterviewer.xcdatamodeld in Sources */,
+				68B6531A1D1B722A005166B6 /* DHSocketServerBrowser.m in Sources */,
+				68B653171D1B7214005166B6 /* DHSocketServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +315,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DHInterviewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.dh.interviewer.DHInterviewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/DHInterviewer/Library/DHInterviewer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -266,10 +329,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DHInterviewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.dh.interviewer.DHInterviewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/DHInterviewer/Library/DHInterviewer-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -292,6 +357,7 @@
 				8C64792A1D12723800DDA18D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
