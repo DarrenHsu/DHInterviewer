@@ -33,18 +33,15 @@
 }
 
 - (BOOL) start {
-    // Start everything up, connect to server
     if (!_connection)
         return NO;
-    
-    // We are the delegate
+
     _connection.delegate = self;
     
     return [_connection connect];
 }
 
 - (void) stop {
-    // Stop everything, disconnect from server
     if (!_connection)
         return;
     
@@ -53,11 +50,8 @@
 }
 
 - (void) broadcastChatMessage:(NSString*)message fromUser:(NSString*)name {
-    // Send chat message to the server
-    // Create network packet to be sent to all clients
-    NSDictionary* packet = [NSDictionary dictionaryWithObjectsAndKeys:message, @"message", name, @"from", nil];
+    NSDictionary* packet = [NSDictionary dictionaryWithObjectsAndKeys:message, kMessage, name, kFrom, nil];
     
-    // Send it out
     [_connection sendNetworkPacket:packet];
 }
 

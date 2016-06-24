@@ -27,18 +27,17 @@
     return self;
 }
 
-- (BOOL) start {
+- (BOOL) start:(NSString *) roomName {
     _server = [DHSocketServer new];
     _server.delegate = self;
     
-    if (![_server start:@"test"]) {
+    if (![_server start:roomName]) {
         _server = nil;
         return NO;
     }
     
     return YES;
 }
-
 
 - (void) stop {
     [_server stop];
@@ -47,16 +46,14 @@
     [_clients makeObjectsPerformSelector:@selector(close)];
 }
 
-
 - (void) broadcastChatMessage:(NSString*)message fromUser:(NSString*)name {
     if (self.delegate && [self.delegate respondsToSelector:@selector(displayChatMessage:fromUser:)])
         [self.delegate displayChatMessage:message fromUser:name];
     
-    NSDictionary* packet = [NSDictionary dictionaryWithObjectsAndKeys:message, @"message", name, @"from", nil];
+    NSDictionary* packet = [NSDictionary dictionaryWithObjectsAndKeys:message, kMessage, name, kFrom, nil];
     
     [_clients makeObjectsPerformSelector:@selector(sendNetworkPacket:) withObject:packet];
 }
-
 
 #pragma mark - ServerDelegate Method Implementations
 - (void) serverFailed:(DHSocketServer *) server reason:(NSString *)reason {

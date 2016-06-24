@@ -10,4 +10,7 @@
 
 @interface DHLocalRoom : DHRoom
 
+- (BOOL) start:(NSString *) roomName;
+- (void) stop;
+
 @end

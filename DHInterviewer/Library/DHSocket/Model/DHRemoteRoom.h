@@ -16,4 +16,7 @@
 - (id)initWithHost:(NSString *) host andPort:(NSInteger) port;
 - (id)initWithNetService:(NSNetService *) netService;
 
+- (BOOL) start;
+- (void) stop;
+
 @end

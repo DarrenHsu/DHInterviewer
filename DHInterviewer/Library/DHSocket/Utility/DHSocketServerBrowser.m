@@ -71,6 +71,8 @@
 
 #pragma mark - NSNetServiceBrowser Delegate Method Implementations
 - (void)netServiceBrowser:(NSNetServiceBrowser *)netServiceBrowser didFindService:(NSNetService *) netService moreComing:(BOOL)moreServicesComing {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    
     // New service was found
     // Make sure that we don't have such service already (why would this happen? not sure)
     if (![_servers containsObject:netService]) {
@@ -90,6 +92,8 @@
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)netServiceBrowser didRemoveService:(NSNetService *)netService moreComing:(BOOL)moreServicesComing {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    
     // Service was removed
     // Remove from list
     [_servers removeObject:netService];

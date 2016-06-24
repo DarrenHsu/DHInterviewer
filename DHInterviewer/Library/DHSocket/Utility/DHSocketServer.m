@@ -184,7 +184,17 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
 
 
 #pragma mark - NSNetService Delegate Method Implementations
+- (void)netServiceWillPublish:(NSNetService *)sender; {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+- (void)netServiceDidPublish:(NSNetService *)sender {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
 - (void)netService:(NSNetService*)sender didNotPublish:(NSDictionary*)errorDict {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    
     // Delegate method, called by NSNetService in case service publishing fails for whatever reason
     if (sender != _netService)
         return;
@@ -200,5 +210,24 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
         [_delegate serverFailed:self reason:@"Failed to publish service via Bonjour (duplicate server name?)"];
 }
 
+- (void)netServiceWillResolve:(NSNetService *)sender {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+- (void)netServiceDidResolveAddress:(NSNetService *)sender {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+- (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary<NSString *, NSNumber *> *)errorDict {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+- (void)netService:(NSNetService *)sender didUpdateTXTRecordData:(NSData *)data {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+- (void)netService:(NSNetService *)sender didAcceptConnectionWithInputStream:(NSInputStream *)inputStream outputStream:(NSOutputStream *)outputStream {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
 
 @end
