@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Technical-->
@@ -18,44 +19,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J1a-lV-jpY">
-                                <rect key="frame" x="20" y="20" width="560" height="471"/>
+                                <rect key="frame" x="20" y="20" width="560" height="484"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-NP-loC">
-                                <rect key="frame" x="283" y="507" width="34" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="ZzC-PS-WC3"/>
-                                    <constraint firstAttribute="height" constant="30" id="h67-8a-rXx"/>
-                                </constraints>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startPressed:" destination="LcQ-Ej-r8l" eventType="touchUpInside" id="x52-cF-6cH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-rD-J84">
-                                <rect key="frame" x="349" y="507" width="30" height="30"/>
+                                <rect key="frame" x="550" y="513" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3IZ-20-nZp"/>
-                                    <constraint firstAttribute="width" constant="30" id="xUy-dO-7gu"/>
+                                    <constraint firstAttribute="height" constant="30" id="aiO-XU-SBr"/>
+                                    <constraint firstAttribute="width" constant="30" id="qaJ-1I-WAz"/>
                                 </constraints>
                                 <state key="normal" title="test"/>
                                 <connections>
                                     <action selector="testPressed:" destination="LcQ-Ej-r8l" eventType="touchUpInside" id="sv5-6D-sWc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-NP-loC">
+                                <rect key="frame" x="20" y="512" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="fLU-kO-vR3"/>
+                                    <constraint firstAttribute="height" constant="30" id="hd9-yv-8T2"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startPressed:" destination="LcQ-Ej-r8l" eventType="touchUpInside" id="x52-cF-6cH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="u1R-NP-loC" secondAttribute="bottom" constant="14" id="GEd-eN-g8Q"/>
-                            <constraint firstItem="qBM-rD-J84" firstAttribute="leading" secondItem="u1R-NP-loC" secondAttribute="trailing" constant="32" id="PbT-gJ-exe"/>
-                            <constraint firstItem="u1R-NP-loC" firstAttribute="centerX" secondItem="j9A-1w-Rs6" secondAttribute="centerX" id="Sv8-o2-MQ3"/>
-                            <constraint firstAttribute="trailing" secondItem="J1a-lV-jpY" secondAttribute="trailing" constant="20" id="UZd-Za-SsD"/>
-                            <constraint firstItem="u1R-NP-loC" firstAttribute="top" secondItem="J1a-lV-jpY" secondAttribute="bottom" constant="16" id="dHx-Tg-kZd"/>
-                            <constraint firstItem="J1a-lV-jpY" firstAttribute="top" secondItem="aw0-eB-PKO" secondAttribute="bottom" id="lVJ-cx-tDm"/>
-                            <constraint firstItem="J1a-lV-jpY" firstAttribute="leading" secondItem="j9A-1w-Rs6" secondAttribute="leading" constant="20" id="naW-uV-pBb"/>
-                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="qBM-rD-J84" secondAttribute="bottom" constant="14" id="soF-WV-uZt"/>
+                            <constraint firstItem="J1a-lV-jpY" firstAttribute="leading" secondItem="j9A-1w-Rs6" secondAttribute="leading" constant="20" id="5PD-Mc-UGl"/>
+                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="qBM-rD-J84" secondAttribute="bottom" constant="8" id="8id-JG-SyY"/>
+                            <constraint firstItem="qBM-rD-J84" firstAttribute="trailing" secondItem="j9A-1w-Rs6" secondAttribute="trailingMargin" id="9Rp-Ov-mre"/>
+                            <constraint firstItem="u1R-NP-loC" firstAttribute="top" secondItem="J1a-lV-jpY" secondAttribute="bottom" constant="8" id="FCo-UG-Szt"/>
+                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="u1R-NP-loC" secondAttribute="bottom" constant="9" id="Hrv-oJ-j0Y"/>
+                            <constraint firstItem="u1R-NP-loC" firstAttribute="leading" secondItem="j9A-1w-Rs6" secondAttribute="leadingMargin" id="Iln-Wv-UtV"/>
+                            <constraint firstAttribute="trailing" secondItem="J1a-lV-jpY" secondAttribute="trailing" constant="20" id="JTo-yT-hqm"/>
+                            <constraint firstItem="J1a-lV-jpY" firstAttribute="top" secondItem="aw0-eB-PKO" secondAttribute="bottom" id="S1R-76-MX0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Technical" image="ic_technical" id="P3J-jd-XHe"/>
@@ -86,10 +87,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pu6-G6-N2a">
-                                <rect key="frame" x="285" y="513" width="30" height="30"/>
+                                <rect key="frame" x="550" y="513" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="5ny-mM-3Jc"/>
-                                    <constraint firstAttribute="height" constant="30" id="U2g-jG-WBU"/>
+                                    <constraint firstAttribute="height" constant="30" id="DZX-pj-wZs"/>
+                                    <constraint firstAttribute="width" constant="30" id="HFc-ue-RRv"/>
                                 </constraints>
                                 <state key="normal" title="test"/>
                                 <connections>
@@ -99,12 +100,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="d0R-1X-gT7" secondAttribute="trailing" constant="20" id="Fa9-Au-kHR"/>
-                            <constraint firstItem="Pu6-G6-N2a" firstAttribute="centerX" secondItem="Frz-Eu-sCT" secondAttribute="centerX" id="d7X-aK-dBw"/>
-                            <constraint firstItem="gxf-0U-DZR" firstAttribute="top" secondItem="d0R-1X-gT7" secondAttribute="bottom" constant="47" id="f0j-ZU-XyY"/>
-                            <constraint firstItem="d0R-1X-gT7" firstAttribute="top" secondItem="qGW-UV-kS0" secondAttribute="bottom" id="qRf-v4-Y3N"/>
-                            <constraint firstItem="d0R-1X-gT7" firstAttribute="leading" secondItem="Frz-Eu-sCT" secondAttribute="leading" constant="20" id="wfY-z0-nwc"/>
-                            <constraint firstItem="gxf-0U-DZR" firstAttribute="top" secondItem="Pu6-G6-N2a" secondAttribute="bottom" constant="8" id="xZs-Gu-bQs"/>
+                            <constraint firstItem="d0R-1X-gT7" firstAttribute="leading" secondItem="Frz-Eu-sCT" secondAttribute="leading" constant="20" id="695-DE-CSk"/>
+                            <constraint firstItem="Pu6-G6-N2a" firstAttribute="top" secondItem="d0R-1X-gT7" secondAttribute="bottom" constant="9" id="KT6-yo-EOh"/>
+                            <constraint firstAttribute="trailing" secondItem="Pu6-G6-N2a" secondAttribute="trailing" constant="20" id="MzF-Si-G3w"/>
+                            <constraint firstItem="gxf-0U-DZR" firstAttribute="top" secondItem="Pu6-G6-N2a" secondAttribute="bottom" constant="8" id="ZWD-9b-sDr"/>
+                            <constraint firstAttribute="trailing" secondItem="d0R-1X-gT7" secondAttribute="trailing" constant="20" id="e75-ms-a1b"/>
+                            <constraint firstItem="d0R-1X-gT7" firstAttribute="top" secondItem="qGW-UV-kS0" secondAttribute="bottom" id="gYW-z9-djf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="supervisor" image="ic_supervisor" id="2QA-fl-nPl"/>
