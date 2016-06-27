@@ -14,8 +14,8 @@
 
 @property (nonatomic, weak) id<DHSocketServerBrowserDelegate> delegate;
 
-- (BOOL)start;
-- (void)stop;
+- (BOOL) start;
+- (void) stop;
 
 @end
 

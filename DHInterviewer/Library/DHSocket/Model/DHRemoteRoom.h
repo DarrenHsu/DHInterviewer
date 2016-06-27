@@ -18,5 +18,6 @@
 
 - (BOOL) start;
 - (void) stop;
+- (void) broadcastChatMessage:(NSString*)message fromUser:(NSString*)name;
 
 @end

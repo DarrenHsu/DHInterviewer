@@ -3,3 +3,4 @@
 //
 
 #import "DHSocket.h"
+#import "CoreData+MagicalRecord.h"

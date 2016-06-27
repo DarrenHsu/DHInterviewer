@@ -15,6 +15,14 @@ class DHSupervisorViewController: UIViewController, DHSocketServerBrowserDelegat
     var remoteRoom : DHRemoteRoom?
     var serverBrowser : DHSocketServerBrowser?
     
+    @IBAction func testPressed(sender : UIButton) {
+        if remoteRoom == nil {
+            return
+        }
+        
+        remoteRoom!.broadcastChatMessage("local", fromUser: "supervisor")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,12 +50,12 @@ class DHSupervisorViewController: UIViewController, DHSocketServerBrowserDelegat
     }
     
     func serverBrowser(serverBrowser: DHSocketServerBrowser!, removeService service: NSNetService!) {
-        
+        NSLog("removeservice \(service)")
     }
     
     // MARK: - DHRoomDelegate Methods
     func displayChatMessage(message: String!, fromUser userName: String!) {
-        msgTextView?.text = msgTextView?.text.stringByAppendingFormat("%@ %@\n", message, userName)
+        msgTextView?.text = msgTextView?.text.stringByAppendingFormat("%@ : %@\n", userName, message)
     }
     
     func roomTerminated(room: AnyObject!, reason string: String!) {

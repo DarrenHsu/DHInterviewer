@@ -24,7 +24,7 @@
     return self;
 }
 
-- (id)initWithNetService:(NSNetService*)netService {
+- (id)initWithNetService:(NSNetService *) netService {
     self = [self init];
     if (self) {
         _connection = [[DHSocketConnection alloc] initWithNetService:netService];
@@ -49,7 +49,7 @@
     _connection = nil;
 }
 
-- (void) broadcastChatMessage:(NSString*)message fromUser:(NSString*)name {
+- (void) broadcastChatMessage:(NSString *)message fromUser:(NSString *) name {
     NSDictionary* packet = [NSDictionary dictionaryWithObjectsAndKeys:message, kMessage, name, kFrom, nil];
     
     [_connection sendNetworkPacket:packet];

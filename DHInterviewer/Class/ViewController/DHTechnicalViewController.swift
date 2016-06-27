@@ -14,6 +14,14 @@ class DHTechnicalViewController: UIViewController, DHRoomDelegate {
 
     var localRoom : DHLocalRoom?
     
+    @IBAction func testPressed(sender : UIButton) {
+        if localRoom == nil {
+            return
+        }
+        
+        localRoom!.broadcastChatMessage("local", fromUser: "technical")
+    }
+    
     @IBAction func startPressed(sender : UIButton) {
         if localRoom != nil {
             return
@@ -34,7 +42,7 @@ class DHTechnicalViewController: UIViewController, DHRoomDelegate {
 
     // MARK: - DHRoomDelegate Methods
     func displayChatMessage(message: String!, fromUser userName: String!) {
-        msgTextView?.text = msgTextView?.text.stringByAppendingFormat("%@ %@\n", message, userName)
+        msgTextView?.text = msgTextView?.text.stringByAppendingFormat("%@ : %@\n", userName, message)
     }
     
     func roomTerminated(room: AnyObject!, reason string: String!) {

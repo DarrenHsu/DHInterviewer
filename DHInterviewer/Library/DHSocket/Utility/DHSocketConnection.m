@@ -10,26 +10,35 @@
 
 @interface DHSocketConnection () <NSNetServiceDelegate>
 
-@property (nonatomic, strong) NSString* host;
+@property (nonatomic, strong) NSString * host;
 @property (nonatomic, assign) NSInteger port;
 @property (nonatomic, assign) CFSocketNativeHandle connectedSocketHandle;
 
-@property (nonatomic, strong) NSNetService* netService;
+@property (nonatomic, strong) NSNetService * netService;
 
 // Read stream
 @property (nonatomic, assign) CFReadStreamRef readStream;
 @property (nonatomic, assign) BOOL readStreamOpen;
-@property (nonatomic, strong) NSMutableData* incomingDataBuffer;
+@property (nonatomic, strong) NSMutableData * incomingDataBuffer;
 @property (nonatomic, assign) NSInteger packetBodySize;
 
 // Write stream
 @property (nonatomic, assign) CFWriteStreamRef writeStream;
 @property (nonatomic, assign) BOOL writeStreamOpen;
-@property (nonatomic, strong) NSMutableData* outgoingDataBuffer;
+@property (nonatomic, strong) NSMutableData * outgoingDataBuffer;
 
 @end
 
 @implementation DHSocketConnection
+
+- (id) init {
+    self = [super init];
+    if (self) {
+        _connectedSocketHandle = -1;
+        _packetBodySize = -1;
+    }
+    return self;
+}
 
 - (id) initWithHostAddress:(NSString *) host andPort:(NSInteger) port {
     self = [self init];
@@ -50,7 +59,7 @@
 
 - (id) initWithNetService:(NSNetService *) netService {
     // Has it been resolved?
-    if (!netService.hostName)
+    if (netService.hostName)
         return [self initWithHostAddress:netService.hostName andPort:netService.port];
     
     self = [self init];
@@ -128,11 +137,11 @@
     CFOptionFlags registeredEvents = kCFStreamEventOpenCompleted | kCFStreamEventHasBytesAvailable | kCFStreamEventCanAcceptBytes | kCFStreamEventEndEncountered | kCFStreamEventErrorOccurred;
     
     // Setup stream context - reference to 'self' will be passed to stream event handling callbacks
-    CFStreamClientContext ctx = {0, (__bridge void *)(self), NULL, NULL, NULL};
+    CFStreamClientContext ctx = {0, (__bridge_retained void *)self , NULL, NULL, NULL};
     
     // Specify callbacks that will be handling stream events
-    CFReadStreamSetClient(_readStream, registeredEvents, readStreamEventHandler, &ctx);
-    CFWriteStreamSetClient(_writeStream, registeredEvents, writeStreamEventHandler, &ctx);
+    CFReadStreamSetClient(_readStream, registeredEvents, (CFReadStreamClientCallBack)&readStreamEventHandler, &ctx);
+    CFWriteStreamSetClient(_writeStream, registeredEvents, (CFWriteStreamClientCallBack)&writeStreamEventHandler, &ctx);
     
     // Schedule streams with current run loop
     CFReadStreamScheduleWithRunLoop(_readStream,
@@ -212,11 +221,11 @@
 #pragma mark Read stream methods
 void readStreamEventHandler(CFReadStreamRef stream, CFStreamEventType eventType, void *info) {
     // Dispatch readStream events
-    DHSocketConnection* connection = (__bridge DHSocketConnection *)info;
+    DHSocketConnection *connection = (__bridge DHSocketConnection *)info;
     [connection readStreamHandleEvent:eventType];
 }
 
-- (void)readStreamHandleEvent:(CFStreamEventType)event {
+- (void)readStreamHandleEvent:(CFStreamEventType) event {
     // Handle events from the read stream
     // Stream successfully opened
     if (event == kCFStreamEventOpenCompleted) {

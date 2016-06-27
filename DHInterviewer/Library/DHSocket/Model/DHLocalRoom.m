@@ -46,7 +46,7 @@
     [_clients makeObjectsPerformSelector:@selector(close)];
 }
 
-- (void) broadcastChatMessage:(NSString*)message fromUser:(NSString*)name {
+- (void) broadcastChatMessage:(NSString *) message fromUser:(NSString *) name {
     if (self.delegate && [self.delegate respondsToSelector:@selector(displayChatMessage:fromUser:)])
         [self.delegate displayChatMessage:message fromUser:name];
     
@@ -81,7 +81,7 @@
 
 - (void) receivedNetworkPacket:(NSDictionary *) packet viaConnection:(DHSocketConnection *) connection {
     if (self.delegate && [self.delegate respondsToSelector:@selector(displayChatMessage:fromUser:)])
-        [self.delegate displayChatMessage:[packet objectForKey:@"message"] fromUser:[packet objectForKey:@"from"]];
+        [self.delegate displayChatMessage:[packet objectForKey:kMessage] fromUser:[packet objectForKey:kFrom]];
     
     [_clients makeObjectsPerformSelector:@selector(sendNetworkPacket:) withObject:packet];
 }

@@ -152,7 +152,7 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
     }
     
     // Pass this on to our delegate
-    if (_delegate && [_delegate respondsToSelector:@selector(handleNewNativeSocket:)])
+    if (_delegate && [_delegate respondsToSelector:@selector(handleNewConnection:)])
         [_delegate handleNewConnection:connection];
 }
 
