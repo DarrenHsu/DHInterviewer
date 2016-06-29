@@ -25,9 +25,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-rD-J84">
-                                <rect key="frame" x="550" y="513" width="30" height="30"/>
+                                <rect key="frame" x="550" y="504" width="30" height="46.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="aiO-XU-SBr"/>
+                                    <constraint firstAttribute="height" constant="46.5" id="aiO-XU-SBr"/>
                                     <constraint firstAttribute="width" constant="30" id="qaJ-1I-WAz"/>
                                 </constraints>
                                 <state key="normal" title="test"/>
@@ -36,10 +36,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-NP-loC">
-                                <rect key="frame" x="20" y="512" width="34" height="30"/>
+                                <rect key="frame" x="20" y="504" width="47" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="fLU-kO-vR3"/>
-                                    <constraint firstAttribute="height" constant="30" id="hd9-yv-8T2"/>
+                                    <constraint firstAttribute="width" constant="47" id="fLU-kO-vR3"/>
+                                    <constraint firstAttribute="height" constant="47" id="hd9-yv-8T2"/>
                                 </constraints>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -50,10 +50,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J1a-lV-jpY" firstAttribute="leading" secondItem="j9A-1w-Rs6" secondAttribute="leading" constant="20" id="5PD-Mc-UGl"/>
-                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="qBM-rD-J84" secondAttribute="bottom" constant="8" id="8id-JG-SyY"/>
+                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="qBM-rD-J84" secondAttribute="bottom" constant="0.5" id="8id-JG-SyY"/>
                             <constraint firstItem="qBM-rD-J84" firstAttribute="trailing" secondItem="j9A-1w-Rs6" secondAttribute="trailingMargin" id="9Rp-Ov-mre"/>
-                            <constraint firstItem="u1R-NP-loC" firstAttribute="top" secondItem="J1a-lV-jpY" secondAttribute="bottom" constant="8" id="FCo-UG-Szt"/>
-                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="u1R-NP-loC" secondAttribute="bottom" constant="9" id="Hrv-oJ-j0Y"/>
+                            <constraint firstItem="u1R-NP-loC" firstAttribute="top" secondItem="J1a-lV-jpY" secondAttribute="bottom" id="FCo-UG-Szt"/>
+                            <constraint firstItem="MYH-U7-7hN" firstAttribute="top" secondItem="u1R-NP-loC" secondAttribute="bottom" id="Hrv-oJ-j0Y"/>
                             <constraint firstItem="u1R-NP-loC" firstAttribute="leading" secondItem="j9A-1w-Rs6" secondAttribute="leadingMargin" id="Iln-Wv-UtV"/>
                             <constraint firstAttribute="trailing" secondItem="J1a-lV-jpY" secondAttribute="trailing" constant="20" id="JTo-yT-hqm"/>
                             <constraint firstItem="J1a-lV-jpY" firstAttribute="top" secondItem="aw0-eB-PKO" secondAttribute="bottom" id="S1R-76-MX0"/>
@@ -87,10 +87,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pu6-G6-N2a">
-                                <rect key="frame" x="550" y="513" width="30" height="30"/>
+                                <rect key="frame" x="539" y="506" width="41" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="DZX-pj-wZs"/>
-                                    <constraint firstAttribute="width" constant="30" id="HFc-ue-RRv"/>
+                                    <constraint firstAttribute="height" constant="45" id="DZX-pj-wZs"/>
+                                    <constraint firstAttribute="width" constant="41" id="HFc-ue-RRv"/>
                                 </constraints>
                                 <state key="normal" title="test"/>
                                 <connections>
@@ -101,9 +101,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d0R-1X-gT7" firstAttribute="leading" secondItem="Frz-Eu-sCT" secondAttribute="leading" constant="20" id="695-DE-CSk"/>
-                            <constraint firstItem="Pu6-G6-N2a" firstAttribute="top" secondItem="d0R-1X-gT7" secondAttribute="bottom" constant="9" id="KT6-yo-EOh"/>
+                            <constraint firstItem="Pu6-G6-N2a" firstAttribute="top" secondItem="d0R-1X-gT7" secondAttribute="bottom" constant="2" id="KT6-yo-EOh"/>
                             <constraint firstAttribute="trailing" secondItem="Pu6-G6-N2a" secondAttribute="trailing" constant="20" id="MzF-Si-G3w"/>
-                            <constraint firstItem="gxf-0U-DZR" firstAttribute="top" secondItem="Pu6-G6-N2a" secondAttribute="bottom" constant="8" id="ZWD-9b-sDr"/>
+                            <constraint firstItem="gxf-0U-DZR" firstAttribute="top" secondItem="Pu6-G6-N2a" secondAttribute="bottom" id="ZWD-9b-sDr"/>
                             <constraint firstAttribute="trailing" secondItem="d0R-1X-gT7" secondAttribute="trailing" constant="20" id="e75-ms-a1b"/>
                             <constraint firstItem="d0R-1X-gT7" firstAttribute="top" secondItem="qGW-UV-kS0" secondAttribute="bottom" id="gYW-z9-djf"/>
                         </constraints>

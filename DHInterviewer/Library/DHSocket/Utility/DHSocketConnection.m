@@ -20,7 +20,7 @@
 @property (nonatomic, assign) CFReadStreamRef readStream;
 @property (nonatomic, assign) BOOL readStreamOpen;
 @property (nonatomic, strong) NSMutableData * incomingDataBuffer;
-@property (nonatomic, assign) NSInteger packetBodySize;
+@property (nonatomic, assign) int packetBodySize;
 
 // Write stream
 @property (nonatomic, assign) CFWriteStreamRef writeStream;
@@ -236,7 +236,7 @@ void readStreamEventHandler(CFReadStreamRef stream, CFStreamEventType eventType,
         // Read as many bytes from the stream as possible and try to extract meaningful packets
         [self readFromStreamIntoIncomingBuffer];
         
-    } else if ( event == kCFStreamEventEndEncountered || event == kCFStreamEventErrorOccurred ) {
+    } else if (event == kCFStreamEventEndEncountered || event == kCFStreamEventErrorOccurred ) {
         // Connection has been terminated or error encountered (we treat them the same way)
         // Clean everything up
         [self close];
@@ -291,8 +291,7 @@ void readStreamEventHandler(CFReadStreamRef stream, CFStreamEventType eventType,
                 // remove that chunk from buffer
                 NSRange rangeToDelete = {0, sizeof(int)};
                 [_incomingDataBuffer replaceBytesInRange:rangeToDelete withBytes:NULL length:0];
-            }
-            else {
+            } else {
                 // We don't have enough yet. Will wait for more data.
                 break;
             }
