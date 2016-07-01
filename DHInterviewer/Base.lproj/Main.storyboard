@@ -87,10 +87,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pu6-G6-N2a">
-                                <rect key="frame" x="539" y="506" width="41" height="45"/>
+                                <rect key="frame" x="550" y="504" width="30" height="46.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="DZX-pj-wZs"/>
-                                    <constraint firstAttribute="width" constant="41" id="HFc-ue-RRv"/>
+                                    <constraint firstAttribute="height" constant="46.5" id="DZX-pj-wZs"/>
+                                    <constraint firstAttribute="width" constant="30" id="HFc-ue-RRv"/>
                                 </constraints>
                                 <state key="normal" title="test"/>
                                 <connections>
@@ -101,7 +101,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d0R-1X-gT7" firstAttribute="leading" secondItem="Frz-Eu-sCT" secondAttribute="leading" constant="20" id="695-DE-CSk"/>
-                            <constraint firstItem="Pu6-G6-N2a" firstAttribute="top" secondItem="d0R-1X-gT7" secondAttribute="bottom" constant="2" id="KT6-yo-EOh"/>
+                            <constraint firstItem="Pu6-G6-N2a" firstAttribute="top" secondItem="d0R-1X-gT7" secondAttribute="bottom" id="KT6-yo-EOh"/>
                             <constraint firstAttribute="trailing" secondItem="Pu6-G6-N2a" secondAttribute="trailing" constant="20" id="MzF-Si-G3w"/>
                             <constraint firstItem="gxf-0U-DZR" firstAttribute="top" secondItem="Pu6-G6-N2a" secondAttribute="bottom" id="ZWD-9b-sDr"/>
                             <constraint firstAttribute="trailing" secondItem="d0R-1X-gT7" secondAttribute="trailing" constant="20" id="e75-ms-a1b"/>
