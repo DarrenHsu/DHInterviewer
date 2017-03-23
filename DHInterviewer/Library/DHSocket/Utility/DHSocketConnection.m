@@ -286,6 +286,8 @@ void readStreamEventHandler(CFReadStreamRef stream, CFStreamEventType eventType,
             // Do we have enough bytes in the buffer to read the header?
             if ( [_incomingDataBuffer length] >= sizeof(int) ) {
                 // extract length
+                NSString *str = [[NSString alloc] initWithData:_incomingDataBuffer encoding:NSUTF8StringEncoding];
+                NSLog(@"%@",str);
                 memcpy(&_packetBodySize, [_incomingDataBuffer bytes], sizeof(int));
                 
                 // remove that chunk from buffer
@@ -302,6 +304,7 @@ void readStreamEventHandler(CFReadStreamRef stream, CFStreamEventType eventType,
             // We now have enough data to extract a meaningful packet.
             NSData* raw = [NSData dataWithBytes:[_incomingDataBuffer bytes] length:_packetBodySize];
             NSDictionary* packet = [NSKeyedUnarchiver unarchiveObjectWithData:raw];
+            NSLog(@"%@",packet);
             
             // Tell our delegate about it
             if (_delegate && [_delegate respondsToSelector:@selector(receivedNetworkPacket:viaConnection:)])

@@ -76,7 +76,7 @@
     memset(&socketAddress, 0, sizeof(socketAddress));
     socketAddress.sin_len = sizeof(socketAddress);
     socketAddress.sin_family = AF_INET;     // Address family (IPv4 vs IPv6)
-    socketAddress.sin_port = 0;             // Actual port will get assigned automatically by kernel
+    socketAddress.sin_port = 3000;             // Actual port will get assigned automatically by kernel
     socketAddress.sin_addr.s_addr = htonl(INADDR_ANY);    // We must use "network byte order" format (big-endian) for the value here
     
     // Convert the endpoint data structure into something that CFSocket can use
@@ -170,6 +170,8 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
     
     // Publish the service
     [_netService publish];
+    
+    NSLog(@"%@",_netService);
     
     return YES;
 }

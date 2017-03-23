@@ -15,7 +15,7 @@ class DHSupervisorViewController: UIViewController, DHSocketServerBrowserDelegat
     var remoteRoom : DHRemoteRoom?
     var serverBrowser : DHSocketServerBrowser?
     
-    @IBAction func testPressed(sender : UIButton) {
+    @IBAction func testPressed(_ sender : UIButton) {
         if remoteRoom == nil {
             return
         }
@@ -37,7 +37,7 @@ class DHSupervisorViewController: UIViewController, DHSocketServerBrowserDelegat
     }
     
     // MARK: - DHSocketServerBrowserDelegate Methods
-    func serverBrowser(serverBrowser: DHSocketServerBrowser!, addService service: NSNetService!) {
+    func serverBrowser(_ serverBrowser: DHSocketServerBrowser!, add service: NetService!) {
         if remoteRoom != nil {
             return
         }
@@ -49,16 +49,16 @@ class DHSupervisorViewController: UIViewController, DHSocketServerBrowserDelegat
         serverBrowser.stop()
     }
     
-    func serverBrowser(serverBrowser: DHSocketServerBrowser!, removeService service: NSNetService!) {
+    func serverBrowser(_ serverBrowser: DHSocketServerBrowser!, remove service: NetService!) {
         NSLog("removeservice \(service)")
     }
     
     // MARK: - DHRoomDelegate Methods
-    func displayChatMessage(message: String!, fromUser userName: String!) {
-        msgTextView?.text = msgTextView?.text.stringByAppendingFormat("%@ : %@\n", userName, message)
+    func displayChatMessage(_ message: String!, fromUser userName: String!) {
+        msgTextView?.text = msgTextView?.text.appendingFormat("%@ : %@\n", userName, message)
     }
     
-    func roomTerminated(room: AnyObject!, reason string: String!) {
+    func roomTerminated(_ room: AnyObject!, reason string: String!) {
         NSLog("terminate \(room)")
     }
 }

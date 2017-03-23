@@ -14,7 +14,7 @@ class DHTechnicalViewController: UIViewController, DHRoomDelegate {
 
     var localRoom : DHLocalRoom?
     
-    @IBAction func testPressed(sender : UIButton) {
+    @IBAction func testPressed(_ sender : UIButton) {
         if localRoom == nil {
             return
         }
@@ -22,14 +22,14 @@ class DHTechnicalViewController: UIViewController, DHRoomDelegate {
         localRoom!.broadcastChatMessage("local", fromUser: "technical")
     }
     
-    @IBAction func startPressed(sender : UIButton) {
+    @IBAction func startPressed(_ sender : UIButton) {
         if localRoom != nil {
             return
         }
         
         localRoom = DHLocalRoom.init()
         localRoom!.delegate = self
-        localRoom!.start("Darren 720")
+        localRoom!.start("Darren Chat")
     }
 
     override func viewDidLoad() {
@@ -41,11 +41,11 @@ class DHTechnicalViewController: UIViewController, DHRoomDelegate {
     }
 
     // MARK: - DHRoomDelegate Methods
-    func displayChatMessage(message: String!, fromUser userName: String!) {
-        msgTextView?.text = msgTextView?.text.stringByAppendingFormat("%@ : %@\n", userName, message)
+    func displayChatMessage(_ message: String!, fromUser userName: String!) {
+        msgTextView?.text = msgTextView?.text.appendingFormat("%@ : %@\n", userName, message)
     }
     
-    func roomTerminated(room: AnyObject!, reason string: String!) {
+    func roomTerminated(_ room: AnyObject!, reason string: String!) {
         NSLog("terminate \(room)")
     }
 }
